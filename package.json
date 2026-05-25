@@ -1,13 +1,29 @@
 {
-  "name": "car-rental",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+    "name": "car-rental",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/index.js",
+        "dev": "nodemon server/index.js",
+        "migrate": "node server/db/migrate.js",
+        "seed": "node server/db/seed.js",
+        "build:css": "sass client/scss/main.scss:client/css/main.css"
+    },
+    "dependencies": {
+        "bcrypt": "^6.0.0",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.6",
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1",
+        "express-rate-limit": "^8.5.2",
+        "jsonwebtoken": "^9.0.3",
+        "node-cron": "^4.2.1",
+        "pg": "^8.21.0",
+        "twilio": "^6.0.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14",
+        "sass": "^1.100.0"
+    }
 }
