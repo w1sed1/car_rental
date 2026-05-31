@@ -51,8 +51,9 @@ app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).json({ error: 'Внутрішня помилка сервера' });
 });
-
+const cron = require('./cron/dailyBanCheck');
 // ── ЗАПУСК ────────────────────────────────────────────
 app.listen(PORT, () => {
     console.log(`✓ Сервер запущено: http://localhost:${PORT}`);
+		cron.start();
 });
