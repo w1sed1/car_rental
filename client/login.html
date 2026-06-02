@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід — DriveX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="site-header__inner">
+        <a href="/" class="site-header__logo">drive<span class="x">[X]</span></a>
+        <div class="site-header__actions" id="header-actions"></div>
+    </div>
+</header>
+
+<div class="auth-page">
+    <div class="auth-card fade-up">
+        <div class="section__eyebrow">DriveX · вхід</div>
+        <h2>З поверненням</h2>
+        <div class="subtitle">Увійдіть щоб керувати бронюваннями.</div>
+
+        <div class="error" id="auth-error" style="display:none;"></div>
+
+        <form id="login-form">
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" required autocomplete="email">
+            </div>
+            <div class="field">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="submit-btn btn-primary">Увійти</button>
+        </form>
+
+        <div class="swap">
+            Ще не маєте акаунту? <a href="/register.html">Створити</a>
+        </div>
+        <div style="margin-top:20px; padding:14px; background:#11100f;
+                    border-radius:6px; font-size:.78rem; color:#6b665e;
+                    font-family:'JetBrains Mono',monospace;">
+            DEMO:<br>
+            admin@drivex.ua / admin123<br>
+            user1@example.com / user123
+        </div>
+    </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

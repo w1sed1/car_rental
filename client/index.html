@@ -1,7 +1,135 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head><meta charset="UTF-8"><title>DriveX</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveX — Оренда автомобілів</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
 <body>
-  <h1>DriveX</h1>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo">drive<span class="x">[X]</span></a>
+    <nav class="site-header__nav">
+      <a href="/" class="active">Головна</a>
+      <a href="/catalog.html">Каталог</a>
+      <a href="/#map-section">Локації</a>
+    </nav>
+    <div class="site-header__actions" id="header-actions"></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__eyebrow fade-up">DriveX · оренда авто</div>
+    <h1 class="hero__title fade-up-1">
+      Машина, яку <em>обираєш ти</em><br>а не випадок.
+    </h1>
+    <p class="hero__lead fade-up-2">
+      Преміум-парк у восьми містах України. GPS-трекінг, підтвердження по телефону, прозорі ціни.
+    </p>
+    <div class="hero__cta fade-up-3">
+      <a href="/catalog.html" class="btn-primary">Переглянути каталог</a>
+      <a href="#map-section" class="btn-ghost">Найближча станція</a>
+    </div>
+    <div class="hero__stats">
+      <div class="stat fade-up-2"><div class="num">20+</div><div class="lbl">Моделей у парку</div></div>
+      <div class="stat fade-up-3"><div class="num">8</div><div class="lbl">Міст України</div></div>
+      <div class="stat fade-up-4"><div class="num">24/7</div><div class="lbl">Підтримка</div></div>
+    </div>
+  </div>
+</section>
+
+<form class="search-bar fade-up-3" id="search-form">
+  <div class="search-bar__box">
+    <div class="search-bar__field">
+      <label>Місто</label>
+      <select id="search-city"><option value="">Усі міста</option></select>
+    </div>
+    <div class="search-bar__field">
+      <label>Дата отримання</label>
+      <input type="date" id="search-start">
+    </div>
+    <div class="search-bar__field">
+      <label>Дата повернення</label>
+      <input type="date" id="search-end">
+    </div>
+    <button type="submit" class="search-bar__btn">Знайти авто</button>
+  </div>
+</form>
+
+<section class="section">
+  <div class="section__head">
+    <div>
+      <div class="section__eyebrow">Найкращі пропозиції</div>
+      <h2 class="section__title">Популярні моделі</h2>
+    </div>
+    <a href="/catalog.html" class="section__link">Дивитись усі →</a>
+  </div>
+  <div class="cars-grid" id="popular-cars">
+    <p style="color:#6b665e;text-align:center;grid-column:1/-1;padding:40px;">Завантаження...</p>
+  </div>
+</section>
+
+<section class="map-section" id="map-section">
+  <div class="section__head">
+    <div>
+      <div class="section__eyebrow">Геолокація</div>
+      <h2 class="section__title">Знайдіть авто поблизу</h2>
+    </div>
+    <button id="find-nearest" class="section__link">Найближча станція →</button>
+  </div>
+  <div id="map"></div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div class="site-footer__brand">
+      <h3>drive<span class="x">[X]</span></h3>
+      <p>Преміум-сервіс оренди автомобілів. 8 міст України.</p>
+    </div>
+    <div class="site-footer__col">
+      <h4>Сервіс</h4>
+      <ul>
+        <li><a href="/catalog.html">Каталог</a></li>
+        <li><a href="/#map-section">Локації</a></li>
+        <li><a href="/profile.html">Мої бронювання</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>Компанія</h4>
+      <ul>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>Підтримка</h4>
+      <ul>
+        <li><a href="tel:+380501112233">+38 (050) 111-22-33</a></li>
+        <li><a href="mailto:hello@drivex.ua">hello@drivex.ua</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 DriveX. Курсова робота.</span>
+    <span>Київ, Україна</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/home.js"></script>
+<script src="/js/map.js"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ const LOCATIONS = [
     { name: 'DriveX Дніпро',        address: 'просп. Яворницького, 50', city: 'Дніпро',   lat: 48.4647, lng: 35.0462 },
     { name: 'DriveX Запоріжжя',     address: 'просп. Соборний, 100',  city: 'Запоріжжя', lat: 47.8388, lng: 35.1396 },
     { name: 'DriveX Вінниця',       address: 'вул. Соборна, 33',      city: 'Вінниця',   lat: 49.2331, lng: 28.4682 },
+		{ name: 'Drivex Чернігів',       address: 'просп. Мируб, 15',     city: 'Чернігів',  lat: 51.4982, lng:31.2893},
 ];
 
 const CARS = [
@@ -41,6 +42,7 @@ const CARS = [
     { brand:'Volkswagen',   model:'Multivan',  year:2022, plate:'AA8899SS', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:2600 },
     { brand:'Mercedes-Benz',model:'V-Class',   year:2023, plate:'AA9900TT', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:3000 },
     { brand:'Renault',      model:'Megane',    year:2022, plate:'AA1010UU', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:1000 },
+		{ brand:'Toyota',       model:'Camry',     year:2019, plate:'AA9090JJ', body:'седан',    trans:'manual', fuel:'бензин',  seats:5, price:2100 },
 ];
 
 const FIRST_NAMES = ['Олександр','Марія','Іван','Анна','Петро','Софія','Микола','Олена','Андрій','Катерина'];

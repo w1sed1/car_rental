@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — DriveX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo">drive<span class="x">[X]</span></a>
+    <nav class="site-header__nav">
+      <a href="/">Головна</a>
+      <a href="/catalog.html" class="active">Каталог</a>
+    </nav>
+    <div class="site-header__actions" id="header-actions"></div>
+  </div>
+</header>
+
+<section style="padding:40px 0 20px;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 24px;">
+    <div class="section__eyebrow">DriveX · каталог</div>
+    <h1 style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:-.02em;">
+      Знайдіть свою машину
+    </h1>
+  </div>
+</section>
+
+<div class="catalog-layout">
+  <aside class="filter-panel">
+    <h3>Фільтри</h3>
+    <div class="filter-group">
+      <label>Місто</label>
+      <select id="f-city"><option value="">Усі</option></select>
+    </div>
+    <div class="filter-group">
+      <label>Тип кузова</label>
+      <select id="f-body_type">
+        <option value="">Усі</option>
+        <option value="седан">Седан</option>
+        <option value="хетчбек">Хетчбек</option>
+        <option value="кросовер">Кросовер</option>
+        <option value="мінівен">Мінівен</option>
+        <option value="ліфтбек">Ліфтбек</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Трансмісія</label>
+      <select id="f-transmission">
+        <option value="">Будь-яка</option>
+        <option value="auto">Автомат</option>
+        <option value="manual">Механіка</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Паливо</label>
+      <select id="f-fuel_type">
+        <option value="">Будь-яке</option>
+        <option value="бензин">Бензин</option>
+        <option value="дизель">Дизель</option>
+        <option value="гібрид">Гібрид</option>
+        <option value="електро">Електро</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Сортування</label>
+      <select id="f-sort">
+        <option value="price_asc">Спочатку дешеві</option>
+        <option value="price_desc">Спочатку дорогі</option>
+        <option value="popular">Найпопулярніші</option>
+        <option value="year_desc">Найновіші</option>
+      </select>
+    </div>
+    <button class="btn-primary" style="width:100%;justify-content:center;" onclick="applyFilters()">
+      Застосувати
+    </button>
+  </aside>
+
+  <main>
+    <div class="cars-grid" id="catalog-grid">
+      <p style="color:#6b665e;padding:40px;grid-column:1/-1;text-align:center;">Завантаження...</p>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer" style="margin-top:60px;">
+  <div class="site-footer__bottom" style="margin-top:0;">
+    <span>© 2026 DriveX.</span>
+  </div>
+</footer>
+
+<script src="/js/api.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

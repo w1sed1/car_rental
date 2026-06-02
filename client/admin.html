@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін — DriveX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="site-header__inner">
+        <a href="/" class="site-header__logo">drive<span class="x">[X]</span></a>
+        <nav class="site-header__nav">
+            <a href="/admin.html" class="active">Дашборд</a>
+            <a href="/catalog.html">Каталог</a>
+        </nav>
+        <div class="site-header__actions" id="header-actions"></div>
+    </div>
+</header>
+
+<main class="dashboard">
+    <div class="dashboard__head">
+        <div>
+            <div class="dashboard__sub">DriveX · адміністрування</div>
+            <h1 class="dashboard__title">Огляд системи</h1>
+        </div>
+        <button class="btn-ghost" id="run-cron-btn">↻ Запустити перерахунок</button>
+    </div>
+
+    <div class="kpi-grid" id="kpi-grid">
+        <div class="kpi"><div class="lbl">Завантаження...</div><div class="val">—</div></div>
+    </div>
+
+    <div class="dash-grid">
+        <div class="panel">
+            <div class="panel__head">
+                <div class="panel__title">Бронювання за 30 днів</div>
+                <div class="panel__sub">DAILY</div>
+            </div>
+            <canvas id="chart-bookings"></canvas>
+        </div>
+        <div class="panel">
+            <div class="panel__head">
+                <div class="panel__title">Топ авто</div>
+                <div class="panel__sub">90 ДНІВ</div>
+            </div>
+            <div class="table-wrap" id="popular-table"></div>
+        </div>
+    </div>
+
+    <div class="dash-grid">
+        <div class="panel">
+            <div class="panel__head">
+                <div class="panel__title">Авто, що потребують ТО</div>
+                <div class="panel__sub">OIL CHANGE</div>
+            </div>
+            <div class="table-wrap" id="maintenance-table"></div>
+        </div>
+        <div class="panel">
+            <div class="panel__head">
+                <div class="panel__title">Бронювання по містах</div>
+                <div class="panel__sub">REVENUE</div>
+            </div>
+            <div class="table-wrap" id="city-table"></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel__head">
+            <div class="panel__title">Користувачі з високим % відмов</div>
+            <div class="panel__sub">RISK</div>
+        </div>
+        <div class="table-wrap" id="risk-table"></div>
+    </div>
+</main>
+
+<script src="/js/api.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>
