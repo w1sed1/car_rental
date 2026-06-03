@@ -22,27 +22,27 @@ const LOCATIONS = [
 ];
 
 const CARS = [
-    { brand:'Renault',      model:'Clio',      year:2022, plate:'AA1234BB', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:850  },
-    { brand:'Skoda',        model:'Fabia',     year:2023, plate:'AA2345CC', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:900  },
-    { brand:'Toyota',       model:'Yaris',     year:2023, plate:'AA3456DD', body:'хетчбек',  trans:'auto',   fuel:'гібрид',  seats:5, price:1100 },
-    { brand:'Volkswagen',   model:'Passat',    year:2022, plate:'AA4567EE', body:'седан',    trans:'auto',   fuel:'дизель',  seats:5, price:1500 },
-    { brand:'Skoda',        model:'Octavia',   year:2023, plate:'AA5678FF', body:'ліфтбек',  trans:'auto',   fuel:'бензин',  seats:5, price:1400 },
-    { brand:'Mazda',        model:'6',         year:2023, plate:'AA6789GG', body:'седан',    trans:'auto',   fuel:'бензин',  seats:5, price:1600 },
-    { brand:'Toyota',       model:'Camry',     year:2024, plate:'AA7890HH', body:'седан',    trans:'auto',   fuel:'гібрид',  seats:5, price:1800 },
-    { brand:'BMW',          model:'5 Series',  year:2023, plate:'AA8901II', body:'седан',    trans:'auto',   fuel:'бензин',  seats:5, price:2800 },
-    { brand:'Mercedes-Benz',model:'E-Class',   year:2024, plate:'AA9012JJ', body:'седан',    trans:'auto',   fuel:'бензин',  seats:5, price:3200 },
-    { brand:'Audi',         model:'A6',        year:2023, plate:'AA0123KK', body:'седан',    trans:'auto',   fuel:'дизель',  seats:5, price:2900 },
-    { brand:'Toyota',       model:'RAV4',      year:2023, plate:'AA1122LL', body:'кросовер', trans:'auto',   fuel:'гібрид',  seats:5, price:1900 },
-    { brand:'Hyundai',      model:'Tucson',    year:2023, plate:'AA2233MM', body:'кросовер', trans:'auto',   fuel:'бензин',  seats:5, price:1700 },
-    { brand:'Mazda',        model:'CX-5',      year:2023, plate:'AA3344NN', body:'кросовер', trans:'auto',   fuel:'бензин',  seats:5, price:1800 },
-    { brand:'BMW',          model:'X5',        year:2024, plate:'AA4455OO', body:'кросовер', trans:'auto',   fuel:'дизель',  seats:5, price:3500 },
-    { brand:'Tesla',        model:'Model 3',   year:2024, plate:'AA5566PP', body:'седан',    trans:'auto',   fuel:'електро', seats:5, price:2400 },
-    { brand:'Tesla',        model:'Model Y',   year:2024, plate:'AA6677QQ', body:'кросовер', trans:'auto',   fuel:'електро', seats:5, price:2700 },
-    { brand:'Volkswagen',   model:'ID.4',      year:2023, plate:'AA7788RR', body:'кросовер', trans:'auto',   fuel:'електро', seats:5, price:2200 },
-    { brand:'Volkswagen',   model:'Multivan',  year:2022, plate:'AA8899SS', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:2600 },
-    { brand:'Mercedes-Benz',model:'V-Class',   year:2023, plate:'AA9900TT', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:3000 },
-    { brand:'Renault',      model:'Megane',    year:2022, plate:'AA1010UU', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:1000 },
-		{ brand:'Toyota',       model:'Camry',     year:2019, plate:'AA9090JJ', body:'седан',    trans:'manual', fuel:'бензин',  seats:5, price:2100 },
+    { brand:'Renault',      model:'Clio',      year:2022, plate:'AA1234BB', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:850,  image:'/img/renault-clio.png' },
+    { brand:'Skoda',        model:'Fabia',     year:2023, plate:'AA2345CC', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:900,  image:'/img/skoda-fabia.png' },
+    { brand:'Toyota',       model:'Yaris',     year:2023, plate:'AA3456DD', body:'хетчбек',  trans:'auto',   fuel:'гібрид',  seats:5, price:1100, image:'/img/toyota-yaris.png' },
+    { brand:'Volkswagen',   model:'Passat',    year:2022, plate:'AA4567EE', body:'седан',    trans:'auto',   fuel:'дизель',  seats:5, price:1500, image:'/img/vw-passat.png' },
+    { brand:'Skoda',        model:'Octavia',   year:2023, plate:'AA5678FF', body:'ліфтбек',  trans:'auto',   fuel:'бензин',  seats:5, price:1400, image:'/img/skoda-octavia.png' },
+    { brand:'Mazda',        model:'6',         year:2023, plate:'AA6789GG', body:'седан',    trans:'auto',   fuel:'бензин',  seats:5, price:1600, image:'/img/mazda-6.png' },
+    { brand:'Toyota',       model:'Camry',     year:2024, plate:'AA7890HH', body:'седан',    trans:'auto',   fuel:'гібрид',  seats:5, price:1800, image:'/img/toyota-camry.png' },
+    { brand:'BMW',          model:'5 Series',  year:2023, plate:'AA8901II', body:'седан',    trans:'auto',   fuel:'бензин',  seats:5, price:2800, image:'/img/bmw-5series.png' },
+    { brand:'Mercedes-Benz',model:'E-Class',   year:2024, plate:'AA9012JJ', body:'седан',    trans:'auto',   fuel:'бензин',  seats:5, price:3200, image:'/img/mercedes-eclass.png' },
+    { brand:'Audi',         model:'A6',        year:2023, plate:'AA0123KK', body:'седан',    trans:'auto',   fuel:'дизель',  seats:5, price:2900, image:'/img/audi-a6.png' },
+    { brand:'Toyota',       model:'RAV4',      year:2023, plate:'AA1122LL', body:'кросовер', trans:'auto',   fuel:'гібрид',  seats:5, price:1900, image:'/img/toyota-rav4.png' },
+    { brand:'Hyundai',      model:'Tucson',    year:2023, plate:'AA2233MM', body:'кросовер', trans:'auto',   fuel:'бензин',  seats:5, price:1700, image:'/img/hyundai-tucson.png' },
+    { brand:'Mazda',        model:'CX-5',      year:2023, plate:'AA3344NN', body:'кросовер', trans:'auto',   fuel:'бензин',  seats:5, price:1800, image:'/img/mazda-cx5.png' },
+    { brand:'BMW',          model:'X5',        year:2024, plate:'AA4455OO', body:'кросовер', trans:'auto',   fuel:'дизель',  seats:5, price:3500, image:'/img/bmw-x5.png' },
+    { brand:'Tesla',        model:'Model 3',   year:2024, plate:'AA5566PP', body:'седан',    trans:'auto',   fuel:'електро', seats:5, price:2400, image:'/img/tesla-model3.png' },
+    { brand:'Tesla',        model:'Model Y',   year:2024, plate:'AA6677QQ', body:'кросовер', trans:'auto',   fuel:'електро', seats:5, price:2700, image:'/img/tesla-modely.png' },
+    { brand:'Volkswagen',   model:'ID.4',      year:2023, plate:'AA7788RR', body:'кросовер', trans:'auto',   fuel:'електро', seats:5, price:2200, image:'/img/vw-id4.png' },
+    { brand:'Volkswagen',   model:'Multivan',  year:2022, plate:'AA8899SS', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:2600, image:'/img/vw-multivan.png' },
+    { brand:'Mercedes-Benz',model:'V-Class',   year:2023, plate:'AA9900TT', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:3000, image:'/img/mercedes-vclass.png' },
+    { brand:'Renault',      model:'Megane',    year:2022, plate:'AA1010UU', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:1000, image:'/img/renault-megane.png' },
+    
 ];
 
 const FIRST_NAMES = ['Олександр','Марія','Іван','Анна','Петро','Софія','Микола','Олена','Андрій','Катерина'];
@@ -101,14 +101,14 @@ async function seed() {
                 `INSERT INTO cars
                    (brand, model, year, license_plate, body_type, transmission,
                     fuel_type, seats, price_per_day, location_id,
-                    current_lat, current_lng, mileage_km, last_oil_change_km)
-                 VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+                    current_lat, current_lng, mileage_km, last_oil_change_km, image_url)
+                 VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14, $15)
                  RETURNING id`,
                 [c.brand, c.model, c.year, c.plate, c.body, c.trans,
                  c.fuel, c.seats, c.price, locId,
                  loc.lat + (Math.random()-0.5)*0.05,
                  loc.lng + (Math.random()-0.5)*0.05,
-                 mileage, lastOil]
+                 mileage, lastOil, c.image ?? null]
             );
             carIds.push(r.rows[0].id);
         }
