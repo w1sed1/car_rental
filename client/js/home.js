@@ -76,7 +76,7 @@ function renderCarsGrid(cars, selector) {
     const root = document.querySelector(selector);
     if (!root) return;
     if (!cars.length) {
-        root.innerHTML = '<p style="color:#a8a097;text-align:center;padding:40px;grid-column:1/-1;">Авто не знайдено</p>';
+        root.innerHTML = '<p style="color:#5b5f66;text-align:center;padding:40px;grid-column:1/-1;">Авто не знайдено</p>';
         return;
     }
     root.innerHTML = cars.map(carCardHTML).join('');
@@ -107,12 +107,12 @@ function bookCar(carId) {
                     <input type="date" id="bk-end" value="${tomorrow}" min="${today}">
                 </div>
                 <div class="total" id="bk-total">—</div>
-                <div id="bk-error" style="color:#c47878;font-size:.85rem;min-height:20px;"></div>
+                <div id="bk-error" style="color:#c2493a;font-size:.85rem;min-height:20px;"></div>
                 <div class="actions">
                     <button class="btn-ghost" onclick="closeBookModal()">Скасувати</button>
                     <button class="btn-primary" id="bk-submit">Підтвердити</button>
                 </div>
-                <p style="color:#a8a097;font-size:.8rem;margin-top:14px;text-align:center;">
+                <p style="color:#5b5f66;font-size:.8rem;margin-top:14px;text-align:center;">
                     Очікуйте дзвінок для підтвердження.
                 </p>
             </div>

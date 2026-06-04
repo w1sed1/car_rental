@@ -21,8 +21,8 @@
 }
 .auth-card .swap a { color: var(--accent); border-bottom: 1px solid var(--accent); }
 .auth-card .error {
-  background: rgba(212,113,95,.12);
-  border: 1px solid rgba(212,113,95,.4);
+  background: rgba(194,73,58,.10);
+  border: 1px solid rgba(194,73,58,.35);
   border-left: 3px solid var(--red);
   color: var(--red); padding: 12px 15px;
   border-radius: var(--radius); font-size: .92rem; margin-bottom: 18px;
@@ -50,7 +50,7 @@
 
 .modal-backdrop {
   position: fixed; inset: 0;
-  background: rgba(0,0,0,.7);
+  background: rgba(0,0,0,.45);
   backdrop-filter: blur(6px);
   display: grid; place-items: center;
   z-index: 200; padding: 20px;

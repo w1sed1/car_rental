@@ -13,9 +13,9 @@ async function loadMyBookings() {
 
         if (!bookings.length) {
             root.innerHTML = `
-                <p style="color:#a8a097;padding:40px;text-align:center;">
+                <p style="color:#5b5f66;padding:40px;text-align:center;">
                     У вас ще немає бронювань.
-                    <a href="/catalog.html" style="color:#d4a574;">Переглянути каталог</a>
+                    <a href="/catalog.html" style="color:#2f6457;">Переглянути каталог</a>
                 </p>
             `;
             return;

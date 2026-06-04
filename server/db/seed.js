@@ -18,12 +18,12 @@ const LOCATIONS = [
     { name: 'DriveX Дніпро',        address: 'просп. Яворницького, 50', city: 'Дніпро',   lat: 48.4647, lng: 35.0462 },
     { name: 'DriveX Запоріжжя',     address: 'просп. Соборний, 100',  city: 'Запоріжжя', lat: 47.8388, lng: 35.1396 },
     { name: 'DriveX Вінниця',       address: 'вул. Соборна, 33',      city: 'Вінниця',   lat: 49.2331, lng: 28.4682 },
-		{ name: 'Drivex Чернігів',       address: 'просп. Мируб, 15',     city: 'Чернігів',  lat: 51.4982, lng:31.2893},
+    { name: 'Drivex Чернігів',      address: 'просп. Мируб, 15',      city: 'Чернігів',  lat: 51.4982, lng: 31.2893 },
 ];
 
 const CARS = [
-    { brand:'Renault',      model:'Clio',      year:2022, plate:'AA1234BB', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:850,  image:'/img/renault-clio.png' },
-    { brand:'Skoda',        model:'Fabia',     year:2023, plate:'AA2345CC', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:900,  image:'/img/skoda-fabia.png' },
+    { brand:'Renault',      model:'Clio',      year:2022, plate:'AA1234BB', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:1100,  image:'/img/renault-clio.png' },
+    { brand:'Skoda',        model:'Fabia',     year:2023, plate:'AA2345CC', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:1200,  image:'/img/skoda-fabia.png' },
     { brand:'Toyota',       model:'Yaris',     year:2023, plate:'AA3456DD', body:'хетчбек',  trans:'auto',   fuel:'гібрид',  seats:5, price:1100, image:'/img/toyota-yaris.png' },
     { brand:'Volkswagen',   model:'Passat',    year:2022, plate:'AA4567EE', body:'седан',    trans:'auto',   fuel:'дизель',  seats:5, price:1500, image:'/img/vw-passat.png' },
     { brand:'Skoda',        model:'Octavia',   year:2023, plate:'AA5678FF', body:'ліфтбек',  trans:'auto',   fuel:'бензин',  seats:5, price:1400, image:'/img/skoda-octavia.png' },
@@ -42,7 +42,6 @@ const CARS = [
     { brand:'Volkswagen',   model:'Multivan',  year:2022, plate:'AA8899SS', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:2600, image:'/img/vw-multivan.png' },
     { brand:'Mercedes-Benz',model:'V-Class',   year:2023, plate:'AA9900TT', body:'мінівен',  trans:'auto',   fuel:'дизель',  seats:7, price:3000, image:'/img/mercedes-vclass.png' },
     { brand:'Renault',      model:'Megane',    year:2022, plate:'AA1010UU', body:'хетчбек',  trans:'manual', fuel:'бензин',  seats:5, price:1000, image:'/img/renault-megane.png' },
-    
 ];
 
 const FIRST_NAMES = ['Олександр','Марія','Іван','Анна','Петро','Софія','Микола','Олена','Андрій','Катерина'];
@@ -133,9 +132,11 @@ async function seed() {
             const daysOld  = rand(1, 180);
             const start    = daysAgo(daysOld);
             const end      = new Date(start);
-            end.setDate(end.getDate() + rand(1, 7));
+            const rentDays = rand(1, 7);
+            end.setDate(end.getDate() + rentDays);
             const status   = weightedPick();
-            const total    = price * rand(1, 7);
+            const days     = Math.max(1, Math.ceil((end - start) / 86400000) + 1);
+            const total    = price * days;
             const cancelled = status === 'cancelled' ? start : null;
 
             await client.query(

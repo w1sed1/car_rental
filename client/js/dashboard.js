@@ -55,8 +55,8 @@ function renderChart(byDay) {
                 {
                     label: 'Усього',
                     data: byDay.map(d => +d.total),
-                    borderColor: '#d4a574',
-                    backgroundColor: 'rgba(212,165,116,.1)',
+                    borderColor: '#2f6457',
+                    backgroundColor: 'rgba(47,100,87,.12)',
                     tension: 0.35,
                     fill: true,
                     pointRadius: 0,
@@ -65,7 +65,7 @@ function renderChart(byDay) {
                 {
                     label: 'Скасовано',
                     data: byDay.map(d => +d.cancelled),
-                    borderColor: '#c47878',
+                    borderColor: '#c2493a',
                     tension: 0.35,
                     pointRadius: 0,
                     borderWidth: 1.5,
@@ -79,19 +79,19 @@ function renderChart(byDay) {
             plugins: {
                 legend: {
                     labels: {
-                        color: '#a8a097',
-                        font: { family: 'JetBrains Mono', size: 10 },
+                        color: '#5b5f66',
+                        font: { family: 'Manrope', size: 10 },
                     },
                 },
             },
             scales: {
                 x: {
-                    ticks: { color: '#6b665e', font: { size: 10 } },
-                    grid:  { color: 'rgba(255,248,220,.05)' },
+                    ticks: { color: '#5b5f66', font: { size: 10 } },
+                    grid:  { color: 'rgba(0,0,0,.07)' },
                 },
                 y: {
-                    ticks: { color: '#6b665e' },
-                    grid:  { color: 'rgba(255,248,220,.05)' },
+                    ticks: { color: '#5b5f66' },
+                    grid:  { color: 'rgba(0,0,0,.07)' },
                     beginAtZero: true,
                 },
             },
@@ -107,7 +107,7 @@ function renderPopular(cars) {
                 ${cars.map(c => `
                     <tr>
                         <td><strong>${c.brand} ${c.model}</strong>
-                            <span style="color:#6b665e"> ${c.year}</span></td>
+                            <span style="color:#5b5f66"> ${c.year}</span></td>
                         <td>${c.bookings_count || 0}</td>
                         <td>${fmt.money(c.total_revenue || 0)}</td>
                     </tr>
@@ -120,7 +120,7 @@ function renderPopular(cars) {
 function renderMaintenance(cars) {
     const el = document.getElementById('maintenance-table');
     if (!cars.length) {
-        el.innerHTML = '<p style="color:#a8a097;padding:20px;">Усі авто пройшли ТО вчасно ✓</p>';
+        el.innerHTML = '<p style="color:#5b5f66;padding:20px;">Усі авто пройшли ТО вчасно ✓</p>';
         return;
     }
     el.innerHTML = `
@@ -153,7 +153,7 @@ function renderMaintenance(cars) {
 function renderRisk(users) {
     const el = document.getElementById('risk-table');
     if (!users.length) {
-        el.innerHTML = '<p style="color:#a8a097;padding:20px;">Підозрілих не виявлено.</p>';
+        el.innerHTML = '<p style="color:#5b5f66;padding:20px;">Підозрілих не виявлено.</p>';
         return;
     }
     el.innerHTML = `
@@ -170,11 +170,11 @@ function renderRisk(users) {
                     <tr class="${u.cancel_rate >= 50 ? 'warn-row' : ''}">
                         <td>
                             <strong>${u.full_name}</strong><br>
-                            <span style="color:#6b665e;font-size:.8em">${u.email}</span>
+                            <span style="color:#5b5f66;font-size:.8em">${u.email}</span>
                         </td>
                         <td>${u.total_bookings}</td>
                         <td>${u.cancelled_bookings}</td>
-                        <td><strong style="color:${u.cancel_rate >= 50 ? '#c47878' : '#d4a574'}">
+                        <td><strong style="color:${u.cancel_rate >= 50 ? '#c2493a' : '#2f6457'}">
                             ${u.cancel_rate}%
                         </strong></td>
                         <td>${u.is_banned

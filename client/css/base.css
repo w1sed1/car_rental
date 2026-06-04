@@ -1,24 +1,24 @@
 :root {
-  --bg:          #050507;
-  --bg-base:     #0b0b10;
-  --bg-elevated: #15151c;
-  --bg-card:     #101017;
-  --border:      rgba(255,255,255,.10);
-  --border-soft: rgba(255,255,255,.18);
-  --tx:          #f3f3f6;
-  --muted:       #a3a3ac;
-  --dim:         #63636d;
-  --accent:      #6f9e91;
-  --accent2:     #8fb8ac;
-  --accent-deep: #4d7468;
-  --green:       #6fb98c;
-  --red:         #d4715f;
+  --bg:          #ffffff;
+  --bg-base:     #f4f5f6;
+  --bg-elevated: #ffffff;
+  --bg-card:     #ffffff;
+  --border:      rgba(0,0,0,.12);
+  --border-soft: rgba(0,0,0,.16);
+  --tx:          #15161a;
+  --muted:       #5b5f66;
+  --dim:         #9aa0a6;
+  --accent:      #2f6457;
+  --accent2:     #3a7c6c;
+  --accent-deep: #214a40;
+  --green:       #2f8f5b;
+  --red:         #c2493a;
   --font-body:   'Manrope', system-ui, sans-serif;
   --font-disp:   'Manrope', system-ui, sans-serif;
   --font-mono:   'Manrope', system-ui, sans-serif;
   --ease:        cubic-bezier(.16,1,.3,1);
   --radius:      2px;
-  --shadow:      0 22px 60px -28px rgba(0,0,0,.8);
+  --shadow:      0 18px 50px -28px rgba(0,0,0,.18);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -39,8 +39,8 @@ body::before {
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
   background-image:
-    linear-gradient(rgba(111,158,145,.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(111,158,145,.07) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.035) 1px, transparent 1px);
   background-size: 38px 38px;
   mask-image: linear-gradient(to bottom, black, transparent 60%);
   -webkit-mask-image: linear-gradient(to bottom, black, transparent 60%);
@@ -66,7 +66,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(111,158,145,.28);
+  box-shadow: 0 0 0 3px rgba(47,100,87,.22);
 }
 
 label {
@@ -89,7 +89,7 @@ label {
   display: inline-flex; align-items: center; gap: 9px;
   padding: 14px 28px;
   background: var(--accent);
-  color: var(--bg);
+  color: #ffffff;
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   font-family: var(--font-body);
@@ -127,7 +127,7 @@ label {
 .btn-ghost:hover, .btn-login:hover, .section__link:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: var(--bg);
+  color: #ffffff;
 }
 
 .submit-btn { width: 100%; justify-content: center; margin-top: 14px; }
@@ -143,9 +143,9 @@ label {
   cursor: pointer;
   transition: all .2s var(--ease);
 }
-.btn-small:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn-small:hover { background: var(--accent); border-color: var(--accent); color: #ffffff; }
 .btn-small.danger { background: transparent; color: var(--red); border-color: var(--red); }
-.btn-small.danger:hover { background: var(--red); color: var(--bg); }
+.btn-small.danger:hover { background: var(--red); color: #ffffff; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(22px); }
